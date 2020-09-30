@@ -4,14 +4,17 @@ public class Employee {
 	private String empId;
 	private String empName;
 	private double sell;
-	private double salary;
+	private double salary = 0;
 	private double compensation;
+	
+	public Employee() {
+		
+	}
 	
 	public Employee(String empId,String empName,double salary){
 		this.empId = empId;
 		this.empName = empName;
 		this.salary = salary;
-		this.sell = 0;
 		this.compensation = salary;
 	}
 	
@@ -36,16 +39,18 @@ public class Employee {
 	}
 	
 	
-	public void calCompensation() {
+	public double calCompensation() {
+		double commission;
 		if(this.sell>=1 && this.sell<=50000) {
-			this.compensation = this.salary + (this.sell*0.05);
+			commission = Math.round(this.salary + (this.sell*0.05));
 		}
 		else if(this.sell>=50001) {
-			this.compensation = this.salary + (this.sell*0.1);
+			commission = Math.round(this.salary + (this.sell*0.1));
 		}
 		else {
-			System.out.print("Can not calculated.");
+			commission = Math.round(this.salary);
 		}
+		return commission;
 	}
 
 	public String getEmpId() {
@@ -82,7 +87,7 @@ public class Employee {
 
 	public void setSell(double sell) {
 		this.sell = sell;
-		calCompensation();
+		this.compensation = this.calCompensation();
 	}
 	public String displayEmployee() {
 		return "\nID: "+this.getEmpId()+"\nName: "+this.getEmpName()+"\nSalary: "+this.getSalary()+"\nSell: "
