@@ -4,7 +4,7 @@ public class Employee {
 	private String empId;
 	private String empName;
 	private double sell;
-	private double salary = 0;
+	private double salary;
 	private double compensation;
 	
 	public Employee() {
@@ -42,13 +42,13 @@ public class Employee {
 	public double calCompensation() {
 		double commission;
 		if(this.sell>=1 && this.sell<=50000) {
-			commission = Math.round(this.salary + (this.sell*0.05));
+			commission = this.salary + (this.sell*0.05);
 		}
 		else if(this.sell>=50001) {
-			commission = Math.round(this.salary + (this.sell*0.1));
+			commission = this.salary + (this.sell*0.1);
 		}
 		else {
-			commission = Math.round(this.salary);
+			commission = this.salary;
 		}
 		return commission;
 	}
@@ -75,6 +75,7 @@ public class Employee {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
+		this.compensation = this.calCompensation();
 	}
 
 	public double getCompensation() {
