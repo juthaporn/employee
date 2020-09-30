@@ -114,7 +114,7 @@ public class AppTest
 		assertEquals(expected,actual);
 	}
 	
-	/* Testing according to requirement 4.2.3 */
+	/* Testing calculating function according to requirement 4.2.3 */
 	/* Noted that expected output will be rounded by the Object Calculating Function */
 	@Test
 	public void testCompensationInputSalary10000SellMinus20000() {
