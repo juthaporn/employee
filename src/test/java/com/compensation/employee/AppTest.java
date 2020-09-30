@@ -101,8 +101,8 @@ public class AppTest
 		assertEquals(expected,actual);
 	}
 	@Test
-	public void testResultTrueInputSell60000() {
-		double input = 60000;
+	public void testResultTrueInputSell50001() {
+		double input = 50001;
 		boolean expected = true;
 		boolean actual = object.isSellInBoundary(input);
 		assertEquals(expected,actual);
@@ -114,33 +114,6 @@ public class AppTest
 		boolean actual = object.isSellInBoundary(input);
 		assertEquals(expected,actual);
 	}
-
-	@Test
-	public void testSalary10000InputSalary10000() {
-	double input = 10000;
-	double expected = 10000;
-	object.setSalary(input);
-	double actual = object.getSalary();
-	assertEquals(expected,actual,2);
-	}
-	
-	@Test
-	public void testSalary20000InputSalary20000() {
-	double input = 20000;
-	double expected = 20000;
-	object.setSalary(input);
-	double actual = object.getSalary();
-	assertEquals(expected,actual,2);
-	}
-	
-	@Test
-	public void testSell50000InputSalary10000() {
-	double input = 10000;
-	double expected = 10000;
-	object.setSalary(input);
-	double actual = object.getSalary();
-	assertEquals(expected,actual,2);
-	}
 	
 	/* Testing calculating function according to requirement 4.2.3 */
 	
@@ -151,8 +124,8 @@ public class AppTest
 		double expected = 10000;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell0() {
@@ -161,8 +134,8 @@ public class AppTest
 		double expected = 10000;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell1() {
@@ -171,8 +144,8 @@ public class AppTest
 		double expected = 10000.05;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell2() {
@@ -181,18 +154,18 @@ public class AppTest
 		double expected = 10000.1;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell25000() {
 		double inputSalary = 10000;
 		double inputSell = 25000;
-		double expected = 11250;
+		double expected = 11250.0;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell49999() {
@@ -201,8 +174,8 @@ public class AppTest
 		double expected = 12499.95;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell50000() {
@@ -211,8 +184,8 @@ public class AppTest
 		double expected = 12500;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell50001() {
@@ -221,8 +194,8 @@ public class AppTest
 		double expected = 15000.10;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 	@Test
 	public void testCompensationInputSalary10000Sell75000() {
@@ -231,7 +204,7 @@ public class AppTest
 		double expected = 17500;
 		object.setSalary(inputSalary);
 		object.setSell(inputSell);
-		double actual = object.getCompensation();
-		assertEquals(expected,actual,2);
+		double actual = object.calCompensation();
+		assertEquals(expected,actual,0.001);
 	}
 }

@@ -50,7 +50,8 @@ public class Employee {
 		else {
 			commission = this.salary;
 		}
-		return commission;
+		/* Math round number to 2 decimal places Example 1.056 to 1.06 */
+		return Math.round(commission* 100.00) / 100.00;
 	}
 
 	public String getEmpId() {
